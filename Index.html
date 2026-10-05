@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NEXORA // COMMAND</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  font-family:Orbitron,Arial,sans-serif;
+  background:#05070d;
+  color:#eafcff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    linear-gradient(rgba(0,220,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,220,255,.035) 1px,transparent 1px);
+  background-size:35px 35px;
+}
+
+.scan{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+  background:#00eaff;
+  box-shadow:0 0 20px #00eaff;
+  animation:scan 5s linear infinite;
+  z-index:99;
+}
+
+@keyframes scan{
+  from{transform:translateY(0)}
+  to{transform:translateY(100vh)}
+}
+
+header{
+  padding:20px;
+  border-bottom:1px solid #15303b;
+  background:rgba(5,7,13,.9);
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
+}
+
+.logo{
+  font-size:22px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:#00eaff;
+  text-shadow:0 0 15px #00eaff;
+}
+
+.logo span{color:#fff}
+
+.container{
+  width:min(1000px,92%);
+  margin:35px auto;
+}
+
+.page{display:none;animation:fade .35s ease}
+.page.active{display:block}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.hero{
+  text-align:center;
+  margin:25px 0 35px;
+}
+
+.hero h1{
+  font-size:clamp(30px,8vw,65px);
+  letter-spacing:5px;
+  color:#fff;
+  text-shadow:0 0 25px #00eaff;
+}
+
+.hero p{
+  margin-top:12px;
+  color:#7c9aa5;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.card{
+  background:rgba(11,17,25,.82);
+  border:1px solid #16404c;
+  border-radius:18px;
+  padding:24px;
+  box-shadow:0 0 35px rgba(0,234,255,.08);
+  backdrop-filter:blur(15px);
+}
+
+h2{
+  color:#00eaff;
+  margin-bottom:20px;
+  font-size:20px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+}
+
+.field.full{grid-column:1/-1}
+
+label{
+  font-size:10px;
+  color:#7e9ca7;
+  letter-spacing:1px;
+}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #214754;
+  outline:none;
+  background:#070d14;
+  color:#fff;
+  font-family:inherit;
+}
+
+input:focus,select:focus{
+  border-color:#00eaff;
+  box-shadow:0 0 12px rgba(0,234,255,.18);
+}
+
+.check{
+  display:flex;
+  gap:10px;
+  align-items:flex-start;
+  margin:18px 0;
+  font-family:Arial,sans-serif;
+  color:#a7bbc1;
+  font-size:13px;
+}
+
+.check input{width:auto;margin-top:3px}
+
+button{
+  border:0;
+  cursor:pointer;
+  padding:14px 20px;
+  border-radius:10px;
+  font-family:inherit;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+.primary{
+  width:100%;
+  color:#001014;
+  background:#00eaff;
+  box-shadow:0 0 22px rgba
